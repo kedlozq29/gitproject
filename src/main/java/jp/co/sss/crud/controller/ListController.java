@@ -12,9 +12,10 @@ public class ListController {
 	@Autowired
 	EmployeeRepository repository;
 	
-	@RequestMapping("items/findAll")
+	@RequestMapping("/list")
 	public String showItemList(Model model) {
-		model.addAttribute("items",repository.findAll());
-		return "items/list";
+		System.out.println("あ");
+		model.addAttribute("e",repository.findAll());
+		return "/list/list";
 	}
 }

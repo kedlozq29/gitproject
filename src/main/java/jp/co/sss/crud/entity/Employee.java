@@ -8,9 +8,11 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "employee")
+@Table(name = "emp_with_employee")
 public class Employee {
 	@Id
+//	@GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "seq_emp_with_employee_gen")
+//	@SequenceGenerator(name = "seq_emp_with_employee_gen",sequenceName = "seq_emp_with_employee",allocationSize = 1)
 	private Integer empId;
 
 	@Column
@@ -30,6 +32,9 @@ public class Employee {
 
 	@Column
 	private Integer authority;
+	
+//	@ManyToOne
+//	@JoinColumn(name = "emp_id",referencedColumnName = "id")
 	
 	 public Integer getEmpId() {
 	        return empId;
